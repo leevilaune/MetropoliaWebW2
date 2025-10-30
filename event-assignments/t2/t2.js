@@ -771,3 +771,43 @@ const restaurants = [
 ];
 
 // your code here
+restaurants.sort((a,b) => {
+      if (a.name < b.name) {
+    return -1;
+  }
+  if (a.name > b.name) {
+    return 1;
+  }
+  return 0;
+})
+const table = document.getElementsByTagName("table")[0];
+
+for (const restaurant of restaurants){
+    const trElem =  document.createElement("tr");
+    const td1Elem = document.createElement("td");
+    td1Elem.textContent = restaurant.name;
+    const td2Elem = document.createElement("td");
+    td2Elem.textContent = restaurant.address;
+    trElem.appendChild(td1Elem);
+    trElem.appendChild(td2Elem);
+    table.appendChild(trElem);
+    trElem.addEventListener("click", () => {
+        const rows = table.querySelectorAll("tr");
+        rows.forEach(row => row.classList.remove("highlight"));
+        trElem.classList.add("highlight");
+        const dialog = document.getElementsByTagName("dialog")[0];
+        const restName = document.getElementById("name");
+        const restAdd = document.getElementById("address");
+        const restPos = document.getElementById("postalcode");
+        const restPhone = document.getElementById("phone");
+        const restCom = document.getElementById("company");
+        const button = document.getElementById("close");
+        button.addEventListener("click", () => dialog.close());
+        restName.textContent = restaurant.name;
+        restAdd.textContent = restaurant.address;
+        restPos.textContent = restaurant.postalCode;
+        restPhone.textContent = restaurant.phone;
+        restCom.textContent = restaurant.company;
+        dialog.showModal();
+    });
+}
