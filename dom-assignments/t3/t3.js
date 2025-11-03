@@ -9,16 +9,21 @@ const screenSize = document.createElement("p");
 screenSize.textContent = `Screen: Width=${screen.width}, Height=${screen.height}`;
 
 const viewport = document.createElement("p");
-viewport.textContent = `Viewport: Width=${window.innerWidth}, Height=${window.innerHeight}`;
+viewport.textContent = `Viewport: Width=${innerWidth}, Height=${innerHeight}`;
 
-const event = new Date(Date.now());
-const date = event.toLocaleDateString("fi-FI", { day: "numeric", month: "long", year: "numeric" });
+const now = new Date(Date.now());
+const date = now.toLocaleDateString("fi-FI", { day: "numeric", month: "long", year: "numeric" });
+const time = now.toLocaleTimeString("fi-FI",{hour:"2-digit",minute:"2-digit"})
 const dateP = document.createElement("p");
+const timeP = document.createElement("p");
 dateP.textContent = date;
+timeP.textContent = time;
+
 
 target.appendChild(agent);
 target.appendChild(platform);
 target.appendChild(screenSize);
 target.appendChild(viewport);
 target.appendChild(dateP);
+target.appendChild(timeP);
 

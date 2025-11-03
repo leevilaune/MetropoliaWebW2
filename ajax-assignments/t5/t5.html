@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="t5.css" />
+    <script src="t5.js" defer></script>
+  </head>
+
+  <body>
+    <h1>Restaurants</h1>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+      </tr>
+      <!-- add restaurants here -->
+    </table>
+    <!-- modal -->
+    <dialog>
+      <div class="dialog-content">
+        <div class="info-card">
+          <h2 id="name"></h2>
+          <p id="address"></p>
+          <p id="postalcode"></p>
+          <p id="phone"></p>
+          <p id="company"></p>
+        </div>
+
+        <div class="menu-card">
+          <h3>Menu</h3>
+          <div id="menu"></div>
+        </div>
+      </div>
+
+      <button id="close">Close</button>
+    </dialog>
+  </body>
+</html>
